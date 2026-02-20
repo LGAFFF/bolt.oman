@@ -71,3 +71,26 @@ body {
   // Firefox support for inverted colors
   scrollbar-color: color-mix(in srgb, var(--bolt-elements-textPrimary), transparent 50%) transparent;
 }
+/* Enhanced Fix for Mobile Preview Buttons */
+@media (max-width: 768px) {
+  /* Targets the header container for the preview buttons */
+  div[class*='flex items-center gap-2 ml-auto'] {
+    flex-wrap: wrap !important;
+    justify-content: flex-end !important;
+    gap: 6px !important;
+    margin-left: 4px !important;
+  }
+
+  /* Force the buttons to be readable */
+  div[class*='flex items-center gap-2 ml-auto'] button {
+    padding: 6px 10px !important;
+    height: auto !important;
+    min-width: fit-content !important;
+    font-size: 11px !important;
+  }
+
+  /* If they still overlap, hide the text and just show icons */
+  div[class*='flex items-center gap-2 ml-auto'] button span {
+    display: none !important;
+  }
+}
