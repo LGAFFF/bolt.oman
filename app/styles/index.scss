@@ -71,3 +71,24 @@ body {
   // Firefox support for inverted colors
   scrollbar-color: color-mix(in srgb, var(--bolt-elements-textPrimary), transparent 50%) transparent;
 }
+/* Fix for the building/preview header buttons on mobile */
+@media (max-width: 768px) {
+  /* This targets the header where the 'Export', 'Sync', etc buttons are */
+  .flex.items-center.gap-2.ml-auto {
+    flex-wrap: wrap !important;
+    justify-content: flex-end !important;
+    gap: 4px !important;
+  }
+
+  /* Make the buttons slightly smaller so they fit */
+  .flex.items-center.gap-2.ml-auto button {
+    padding: 4px 8px !important;
+    font-size: 10px !important;
+    white-space: nowrap !important;
+  }
+  
+  /* Hide the text on some buttons if it's still too crowded */
+  .flex.items-center.gap-2.ml-auto button span {
+    display: none !important;
+  }
+}
